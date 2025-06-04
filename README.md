@@ -1,22 +1,208 @@
-# m-Bitbeam Parts for LDraw
+# 🛍️ Sistema de Diseño para Ecommerce
 
-m-Bitbeam construction set – parts in DAT format for LDraw (http://www.ldraw.org).
+Un sistema de diseño completo tipo Storybook enfocado en ecommerce, construido con **Tailwind CSS**, **React** y **Next.js**. Inspirado visualmente en [shadcnblocks.com](https://www.shadcnblocks.com/) con el enfoque funcional de [ecomusnext](https://ecomusnext-themesflat.vercel.app/).
 
-<img src="http://www.e-mole.cz/sites/default/files/styles/thumbnail_250x250/public/20151014_dsc6983_d300.jpg?itok=_OtL7F8L" alt="Bitbeam photo" />&nbsp;&nbsp;<img src="https://github.com/e-Mole/m-Bitbeam_Parts_for_LDraw/blob/master/examples/all-basic-parts-v02_page_1.png" style="height:176px; width:auto;" height="176px" alt="Bitbeam parts" />&nbsp;&nbsp;<img src="https://github.com/e-Mole/m-Bitbeam_Parts_for_LDraw/blob/master/examples/all-basic-sets-v02_page_1.png" style="height:176px; width:auto;" height="176px" alt="Bitbeam sets">
+## ✨ Características
 
-## What is Bitbeam?
-_Basic Info from [Bitbeam Repository] (https://github.com/bitbeam/bitbeam/wiki/The-Bitbeam-project):_
+- 🎨 **Diseño moderno** inspirado en las mejores prácticas de ecommerce
+- 📱 **Responsive** y mobile-first
+- ♿ **Accesible** con soporte completo para lectores de pantalla
+- 🔧 **Modular** y fácil de personalizar
+- 📚 **Documentado** con Storybook
+- 🎯 **Optimizado** para conversión en ecommerce
+- 🌱 **Sostenible** con código limpio y mantenible
 
-[Bitbeam] (http://bitbeam.org) is an open source construction toy/hardware prototyping platform. A collection of LEGO Technic compatible parts (beams) which can be combined to construct whatever contraption the user has thought up.
+## 🚀 Inicio Rápido
 
-The Bitbeam project aims to define a set of parts which the users themselves can produce using increasingly available technologies for local fabrication like 3D printers, laser cutters and CNC mills.
+### Instalación
 
-The name for the project is derived from the full size modular building system [Grid Beam](http://gridbeamers.com) (Formerly Box Beam).
+```bash
+# Instalar dependencias
+npm install
 
-## Why m-Bitbeam?
+# Ejecutar Storybook
+npm run storybook
 
-m-Bitbeam is an extended Bitbeam 3D printable set that we use when teaching children (STEM education). For more information, see the section of 3D models of the magazine [e-Mole](http://www.e-mole.cz/3d-model/seznam) (yet Czech only). All models are free to download :-)
+# Ejecutar Next.js (desarrollo)
+npm run dev
+```
 
-Visit [m-Bitbeam construction set – parts in STL format for 3D print](https://github.com/e-Mole/m-Bitbeam_Parts_for_3Dprint) and [m-Bitbeam info page](http://www.tfsoft.cz/m-bitbeam/index.html) with a small demonstration in [PDF format](http://www.tfsoft.cz/m-bitbeam/resources/l07-ferda-v01r01-web.pdf).
+### Uso Básico
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+```tsx
+import { Button, ProductCard, SearchInput } from './components';
+import { Header, ProductGrid } from './blocks';
+import { HomePage, ProductPage } from './templates';
+
+// Usar componentes individuales
+<Button variant="primary">Comprar ahora</Button>
+
+// Usar bloques completos
+<Header categories={categories} />
+
+// Usar templates completos
+<HomePage featuredProducts={products} />
+```
+
+## 🧱 Arquitectura
+
+### Componentes
+Elementos individuales y reutilizables:
+- **Button** - Botones con múltiples variantes
+- **ProductCard** - Tarjeta de producto con acciones
+- **SearchInput** - Búsqueda con sugerencias inteligentes
+
+### Bloques
+Agrupaciones funcionales de componentes:
+- **Header** - Navegación completa con búsqueda y carrito
+- **ProductGrid** - Grilla de productos con filtros avanzados
+
+### Templates
+Páginas completas listas para usar:
+- **HomePage** - Página de inicio con hero y secciones
+- **ProductPage** - Página de producto con galería y reseñas
+
+## 📁 Estructura del Proyecto
+
+```
+├── components/          # Componentes individuales
+│   ├── Button/
+│   ├── ProductCard/
+│   └── SearchInput/
+├── blocks/             # Bloques funcionales
+│   ├── Header/
+│   └── ProductGrid/
+├── templates/          # Templates completos
+│   ├── HomePage/
+│   └── ProductPage/
+├── types/              # Definiciones TypeScript
+├── utils/              # Utilidades
+├── styles/             # Estilos globales
+└── .storybook/         # Configuración Storybook
+```
+
+## 🎨 Sistema de Colores
+
+```css
+/* Colores principales */
+--primary-500: #0ea5e9;    /* Azul principal */
+--gray-900: #111827;       /* Negro principal */
+--success-500: #22c55e;    /* Verde éxito */
+--warning-500: #f59e0b;    /* Amarillo advertencia */
+--error-500: #ef4444;      /* Rojo error */
+```
+
+## 📱 Responsive Design
+
+Todos los componentes están optimizados para:
+- 📱 **Mobile** (375px+)
+- 📱 **Tablet** (768px+)
+- 💻 **Desktop** (1024px+)
+- 🖥️ **Large** (1440px+)
+
+## 🔧 Personalización
+
+### Tailwind CSS
+Modifica `tailwind.config.js` para personalizar:
+- Colores de marca
+- Tipografías
+- Espaciados
+- Animaciones
+
+### Componentes
+Cada componente acepta props de personalización:
+
+```tsx
+<Button 
+  variant="primary" 
+  size="lg"
+  leftIcon={<ShoppingCart />}
+  fullWidth
+>
+  Agregar al carrito
+</Button>
+```
+
+## 📚 Documentación
+
+### Storybook
+Ejecuta `npm run storybook` para ver:
+- 📖 Documentación interactiva
+- 🎮 Controles en tiempo real
+- 📱 Vista responsive
+- 🎨 Variantes de componentes
+
+### TypeScript
+Tipos completos para:
+- Props de componentes
+- Datos de productos
+- Estados de aplicación
+- Eventos y callbacks
+
+## 🛒 Casos de Uso
+
+### Ecommerce Básico
+```tsx
+import { HomePage } from './templates';
+
+<HomePage 
+  featuredProducts={products}
+  categories={categories}
+  onAddToCart={handleAddToCart}
+/>
+```
+
+### Catálogo de Productos
+```tsx
+import { ProductGrid } from './blocks';
+
+<ProductGrid 
+  products={products}
+  filters={filters}
+  showFilters={true}
+  gridCols={4}
+/>
+```
+
+### Página de Producto
+```tsx
+import { ProductPage } from './templates';
+
+<ProductPage 
+  product={product}
+  reviews={reviews}
+  relatedProducts={related}
+/>
+```
+
+## 🎯 Optimización para Conversión
+
+- ⚡ **Carga rápida** con lazy loading
+- 🔍 **SEO optimizado** con meta tags
+- 📊 **Analytics ready** con eventos tracking
+- 🛒 **UX optimizada** para checkout
+- 💳 **Trust signals** integrados
+
+## 🤝 Contribución
+
+1. Fork el proyecto
+2. Crea una rama feature (`git checkout -b feature/nueva-funcionalidad`)
+3. Commit tus cambios (`git commit -m 'Agregar nueva funcionalidad'`)
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+MIT License - ver [LICENSE](LICENSE) para más detalles.
+
+## 🙏 Agradecimientos
+
+- [Tailwind CSS](https://tailwindcss.com/) por el framework CSS
+- [Storybook](https://storybook.js.org/) por la documentación
+- [Lucide](https://lucide.dev/) por los iconos
+- [Unsplash](https://unsplash.com/) por las imágenes de ejemplo
+
+---
+
+**¿Necesitas ayuda?** Abre un [issue](../../issues) o consulta la [documentación](../../wiki).
+
